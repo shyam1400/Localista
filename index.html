@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Store Distribution Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Support Local Stores</h1>
+        
+        <!-- Landing Page -->
+        <section id="landing-page">
+            <h2>Choose Your Mode</h2>
+            <button onclick="openUserMode()">User Mode</button>
+            <button onclick="openStoreMode()">Store Mode</button>
+        </section>
+
+        <!-- Store Mode Section -->
+        <section id="store-mode" class="hidden">
+            <h2>Store Mode</h2>
+            <button onclick="goToLandingPage()">Back to Home</button>
+            
+            <!-- Store Registration -->
+            <div id="store-registration">
+                <h3>Register Your Store</h3>
+                <form id="store-form">
+                    <input type="text" id="store-name" placeholder="Store Name" required>
+                    <input type="text" id="location" placeholder="Location" required>
+                    <button type="submit">Register Store</button>
+                </form>
+            </div>
+
+            <!-- Add Stock -->
+            <div id="store-stock">
+                <h3>Add Stock</h3>
+                <form id="stock-form">
+                    <select id="select-store">
+                        <option value="">Select Store</option>
+                    </select>
+                    <input type="text" id="item-name" placeholder="Item Name" required>
+                    <input type="number" id="item-quantity" placeholder="Quantity" required>
+                    <button type="submit">Add Stock</button>
+                </form>
+                <ul id="stock-list"></ul>
+            </div>
+        </section>
+
+        <!-- User Mode Section -->
+        <section id="user-mode" class="hidden">
+            <h2>User Mode</h2>
+            <button onclick="goToLandingPage()">Back to Home</button>
+
+            <!-- Order Placement -->
+            <div id="order-section">
+                <h3>Place an Order</h3>
+                <form id="order-form">
+                    <input type="text" id="search-item" placeholder="Search for an Item" required>
+                    <select id="delivery-preference">
+                        <option value="fastest">Fastest Delivery (Any Store)</option>
+                        <option value="preferred">Preferred Store (Choose Below)</option>
+                    </select>
+                    <select id="select-preferred-store" class="hidden">
+                        <option value="">Select Store</option>
+                    </select>
+                    <button type="submit">Place Order</button>
+                </form>
+                <ul id="order-list"></ul>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
